@@ -14,6 +14,10 @@
 //     // alert(array);
 //     console.log(array);}
 
+
+
+
+
 var YourData = " ";
 
 function validation() {
@@ -21,22 +25,56 @@ function validation() {
 
     for (var i = 0; i < input.length; i++) {
         var a = input[i];
-        YourData = YourData + " " + a.value  ;
+        YourData = YourData + " " + a.value;
     }
 
+
+
     document.getElementById("par").innerHTML = YourData;
+
     
 
 }
 
-    // function bubbleSort(arr) {
-    //     for (let arr = 0; arr < arr.length -1; arr++) {
-         
-          
-    //     }
-    // }
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
 
 
+function bubbleSort(arr) {
+    let swapped
+    do {
+        swapped = false
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+                swapped = true
+            }
+
+        }
+    } while (swapped)
+}
+
+
+const arr = [8, 20, -4, -3, 10]
+bubbleSort(arr)
+console.log(arr)
 
 
 
