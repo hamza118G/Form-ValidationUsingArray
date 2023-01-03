@@ -121,6 +121,31 @@
 
 
 
+// function bubbleSort(arrAges) {
+//     let swapped
+//     do {
+//         swapped = false
+//         for (let i = 0; i < arrAges.length - 1; i++) {
+//             if (arrAges[i] > arrAges[i + 1]) {
+//                 let temp = arrAges[i]
+//                 arrAges[i] = arrAges[i + 1]
+//                 arrAges[i + 1] = temp
+//                 swapped = true
+//             }
+
+//         }
+//     } while (swapped)
+// }
+
+
+
+// bubbleSort(arrAges)
+// console.log(arrAges)
+
+
+
+
+
 
 // flow 
 
@@ -128,7 +153,7 @@
 
 // SubmitEvent.click () 
 // {
-//     name = getElementById('name')
+//     name = getElementById('name')    
 //     age = getElementById('age')
 //     ... 
 
@@ -139,10 +164,10 @@
 
 
 // age.click () {
-//     var sortedAge = [10,20,30]
+//     var sortedAge = [10,20,30]    
 //     var sortedPersons = [['Hamza', 10], ['Ali',20], ['Haider', 30]]
 //     persons.forEach(person) {
-//         sortedAge.add(person[1])
+//         sortedAge.add(person[1])    
 //         sortedPersons.add(person)
 
 //     }
@@ -151,22 +176,22 @@
 // }
 
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }    
 
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
+// window.onclick = function (event) {
+//     if (!event.target.matches('.dropbtn')) {
+//         var dropdowns = document.getElementsByClassName("dropdown-content");
+//         var i;
+//         for (i = 0; i < dropdowns.length; i++) {
+//             var openDropdown = dropdowns[i];
+//             if (openDropdown.classList.contains('show')) {
+//                 openDropdown.classList.remove('show');
+//             }    
+//         }    
+//     }    
+// }    
 
 
 
@@ -188,61 +213,106 @@ function savedata(){
     arrAges[arrAges.length]=age;
     arrexperience[arrexperience.length]=experience;
 
-}
+
+}    
    
  
-function displayData() 
-{
-  var content="<b>Data Entered by User :</b><br>";
+function displayData() {
+  var content="<b>Data Entered by User :</b><br>";  
   content+= [...arrNames]+"</br>";
   content+=[...arrsalaries]+"</br>";
   content+=[...arrAges]+"</br>";
   content+=[...arrexperience]+"</br>";
- 
   document.getElementById('display').innerHTML = content;
-  console.log(arrAges)
-}
+
+   console.log(arrAges)
+  
+  
+}  
+// if (arrAges[0] > arrAges[1]) {
+//     console.log(arrAges[1])
+    
+// }
 
 
-
-function bubbleSort(arrAges) {
+function bubbleSort(arr) {
     let swapped
     do {
         swapped = false
-        for (let i = 0; i < arrAges.length - 1; i++) {
-            if (arrAges[i] > arrAges[i + 1]) {
-                let temp = arrAges[i]
-                arrAges[i] = arrAges[i + 1]
-                arrAges[i + 1] = temp
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
                 swapped = true
             }
-
+            
         }
     } while (swapped)
+
 }
 
 
+const arr = [-4,-5,23,12,13,13,123,12,23]
 
-bubbleSort(arrAges)
-console.log(arrAges)
+bubbleSort(arr)
+console.log(arr)
+
+// function sortages() {
+//     for(var i=0; i<arrAges.length; i++){
+//         for(var j=0; j>sortages.length; j++){
+//             if (arrAges[i] > arrAges[i+1]) {
+//                 var temp = arrAges[i]    
+//                 arrAges[i] = arrAges[i+1]
+//                 arrAges = temp
+//             }
+//         }
+//     }
+//     console.log(sortages)
+
+
+
+//   function sortAge  (aage){
+    //         for(i=1; i<aage.length-1; i++){
+        //             if (aage[i] > aage [i+1]) {
+//               sort = aage[i]            
+//               aage[i]= aage[i+1]
+//                 aage[i+1]
+//                 console.log(sortAge)  
+//             }
+//         }
+//   }
+
+
+// function sortages() {
+//     for(var i=0; i<arrAges.length; i++){
+//         for(var j=0; j>sortages.length; j++){
+//             if (arrAges[i] > arrAges[i+1]) {
+//                 var temp = arrAges[i]
+//                 arrAges[i] = arrAges[i+1]
+//                 arrAges = temp
+//             }
+//         }
+//     }
+//     console.log(sortages)
+// }
 
 
 
 
 
-
-const arr = [arrAges];
-const sortWithReduce = arr => {
-   return arr.reduce((acc, val) => {
-      let ind = 0;
-      while(ind < arr.length && val < arr[ind]){
-         ind++;
-      }
-      acc.splice(ind, 0, val);
-      return acc;
-   }, []);
-};
-console.log(sortWithReduce(arrAges));
+// const arr = [arrAges];
+// const sortWithReduce = arr => {
+//    return arr.reduce((acc, val) => {
+//       let ind = 0;
+//       while(ind < arr.length && val < arr[ind]){
+//          ind++;
+//       }
+//       acc.splice(ind, 0, val);
+//       return acc;
+//    }, []);
+// };
+// console.log(sortWithReduce(arrAges));
 
 
 
