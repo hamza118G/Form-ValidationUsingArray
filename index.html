@@ -11,27 +11,68 @@
 <body>
     
     
-    <form >
-        <input type="text" name="array" placeholder="Name" /><br>
-        <input type="text" name="array" placeholder="Age" /><br>
-        <input type="text" name="array" placeholder="Experience" /><br>
-        <input type="text" name="array" placeholder="Salary" /><br>
+    <!-- <form >
+        <h1 class="header">FORM VALIDATION</h1>
+        <input type="text" name="name" placeholder="Name"  /><br>
+        <input type="number" name="age" placeholder="Age"  /><br>
+        <input type="number" name="experience" placeholder="Experience" /><br>
+        <input type="number" name="salary" placeholder="Salary" /><br>
         <button class="Submit" type="button" name="button" onclick="validation()">Submit</button>
-    </form>
-    
-    <h1 id="par"></h1>
 
+
+
+     <input placeholder="name" type="text" name="text" id="inputText"/>
+        <input placeholder="Age" type="number" name="text" id="inputText"/>
+        <input placeholder="Salary" type="number" name="text" id="inputText"/>
+        <input placeholder="Experience" type="number" name="text" id="inputText"/>
+        <button onclick="pushData();">Show</button>
+        <p id="pText"></p>
+        <h1 id="par"></h1>
+      </form> -->
+
+      <form>
+        <h1>Please enter data</h1>
+        <br>
+           <label for="Name">Name</label> 
+            <input id="name" type="text">
+          <br> 
+         
+        <br>
+          <label for="Age">Age</label>
+        <input id="age" type="text">
+        <br>
+        <br>   
+         <label for="salary">salary</label>
+        <input id="salary" type="text">
+        <br>
+        <label for="experience">experience</label>
+        <input id="experience" type="text">
+        <br>
+         
+        <br>
+       <input type="button" value="Save" onclick="savedata()">
+        <input type="button" value="Show data" onclick="displayData()">
+        <br>
+
+        
+     </form>
+     <div id="display"></div>
+
+
+
+ 
     <div class="dropdown">
-        <button  onclick="myFunction()" class="dropbtn">Submit DropDown</button>
+        <button  onclick="myFunction()"   class="dropbtn">Submit DropDown</button>
         <div id="myDropdown" class="dropdown-content">
-            <a href="#">Name</a>
-            <a href="#">Age</a>
-          <a href="#">Experience</a>
-          <a href="#">Salary</a>
+            <a id="name" href="#">Name</a>
+            <a id="age" href="#">Age</a>
+          <a id="experience" href="#">Experience</a>
+          <a id="salary" href="#">Salary</a>
+          <p id="para"></p>
         </div>
       </div>
     
-    
+    <p id="new"></p>
 
 
 </body>

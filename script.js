@@ -9,7 +9,7 @@
 //     var button = document.getElementById('button');
 
 
-    
+
 //     var array = [`Your Name: ${input}`, `Your Age:${Ageinput}`, `Your Experience: ${Experienceinput}`, `Your Salary: ${Salaryinput}`.split(" ") ]
 //     // alert(array);
 //     console.log(array);}
@@ -18,23 +18,137 @@
 
 
 
-var YourData = " ";
-
-function validation() {
-    var input = document.getElementsByName('array');
-
-    for (var i = 0; i < input.length; i++) {
-        var a = input[i];
-        YourData = YourData + " " + a.value;
-    }
 
 
 
-    document.getElementById("par").innerHTML = YourData;
+// var YourData = " ";
+
+// function validation() {
+//     var input = document.getElementsByName('array[]');
+
+//     for (var i = 0; i < input.length; i++) {
+//         var a = input[i];
+//         YourData = YourData + " " + `<li>${a.value}</li>`
+
+//     }
 
     
 
-}
+//     document.getElementById("par").innerHTML = YourData;
+
+    
+//     console.log(YourData)
+
+
+// }
+
+
+   // set value using id
+            //document.getElementById('txt').value = "Text Here";
+            
+            // set value using input
+            //document.getElementsByTagName('input')[1].value = "Input Value";
+            
+            // let arr = [
+            //     {
+            //       'firstName': 'Joe',
+            //       'age': 42,
+            //       'gender': 'male',
+            //     },
+            //     {
+            //       'firstName': 'Mary',
+            //       'lastName': 'Jenkins',
+            //       'age': 36,
+            //       'gender': 'female',
+            //     },
+            //     {
+            //       'firstName': 'Kim',
+            //       'age': 40,
+            //       'gender': 'female',
+            //     }
+            //   ];
+
+            //   function test5(arr) {
+            //     let result=[];
+            //     arr.forEach(function(elm){
+            //      let entry={
+            //        'name':elm['firstName'],
+            //        'age':elm['age']
+            //      };
+               
+            //      // this if will put append last name if present in elm
+            //      if(elm['lastName']){
+            //        entry['name']=entry['name']+' '+elm['lastName'];
+            //      }
+            //      result.push(entry)
+            //     })
+            //     return result;
+            //    }
+
+
+
+
+
+            
+
+
+
+
+
+
+// function bubbleSort(arr) {
+//     let swapped
+//     do {
+//         swapped = false
+//         for (let i = 0; i < arr.length - 1; i++) {
+//             if (arr[i] > arr[i + 1]) {
+//                 let temp = arr[i]
+//                 arr[i] = arr[i + 1]
+//                 arr[i + 1] = temp
+//                 swapped = true
+//             }
+
+//         }
+//     } while (swapped)
+// }
+
+
+// const arr = YourData
+
+// bubbleSort(arr)
+// console.log(arr)
+
+
+
+
+
+// flow 
+
+// var persons = [];
+
+// SubmitEvent.click () 
+// {
+//     name = getElementById('name')
+//     age = getElementById('age')
+//     ... 
+
+//     var person = {name: name, age: age, 2, 50000}
+
+//     persons.add(person)
+// }
+
+
+// age.click () {
+//     var sortedAge = [10,20,30]
+//     var sortedPersons = [['Hamza', 10], ['Ali',20], ['Haider', 30]]
+//     persons.forEach(person) {
+//         sortedAge.add(person[1])
+//         sortedPersons.add(person)
+
+//     }
+//     bubbleSort(personsAge, sortedPersons)
+//     console.log(sortedPersons)
+// }
 
 
 function myFunction() {
@@ -55,15 +169,51 @@ window.onclick = function (event) {
 }
 
 
-function bubbleSort(arr) {
+
+
+var arrsalaries=new Array();
+var arrNames=new Array();
+var arrAges=new Array();
+var arrexperience=new Array();
+
+
+function savedata(){
+    var name = document.getElementById('name').value;
+    var salary = document.getElementById('salary').value;
+    var age = document.getElementById('age').value;
+    var experience = document.getElementById('experience').value;
+
+    arrsalaries[arrsalaries.length]=salary;    
+    arrNames[arrNames.length]=name;
+    arrAges[arrAges.length]=age;
+    arrexperience[arrexperience.length]=experience;
+
+}
+   
+ 
+function displayData() 
+{
+  var content="<b>Data Entered by User :</b><br>";
+  content+= [...arrNames]+"</br>";
+  content+=[...arrsalaries]+"</br>";
+  content+=[...arrAges]+"</br>";
+  content+=[...arrexperience]+"</br>";
+ 
+  document.getElementById('display').innerHTML = content;
+  console.log(arrAges)
+}
+
+
+
+function bubbleSort(arrAges) {
     let swapped
     do {
         swapped = false
-        for (let i = 0; i < arr.length - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                let temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp
+        for (let i = 0; i < arrAges.length - 1; i++) {
+            if (arrAges[i] > arrAges[i + 1]) {
+                let temp = arrAges[i]
+                arrAges[i] = arrAges[i + 1]
+                arrAges[i + 1] = temp
                 swapped = true
             }
 
@@ -72,14 +222,27 @@ function bubbleSort(arr) {
 }
 
 
-const arr = [8, 20, -4, -3, 10]
-bubbleSort(arr)
-console.log(arr)
+
+bubbleSort(arrAges)
+console.log(arrAges)
 
 
 
 
 
+
+const arr = [arrAges];
+const sortWithReduce = arr => {
+   return arr.reduce((acc, val) => {
+      let ind = 0;
+      while(ind < arr.length && val < arr[ind]){
+         ind++;
+      }
+      acc.splice(ind, 0, val);
+      return acc;
+   }, []);
+};
+console.log(sortWithReduce(arrAges));
 
 
 
