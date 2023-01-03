@@ -202,7 +202,23 @@ var arrAges=new Array();
 var arrexperience=new Array();
 
 
-function savedata(){
+// function savedata(){
+//     var name = document.getElementById('name').value;
+//     var salary = document.getElementById('salary').value;
+//     var age = document.getElementById('age').value;
+//     var experience = document.getElementById('experience').value;
+
+//     arrsalaries[arrsalaries.length]=salary;    
+//     arrNames[arrNames.length]=name;
+//     arrAges[arrAges.length]=age;
+//     arrexperience[arrexperience.length]=experience;
+
+
+// }    
+   
+ 
+function displayData() {
+
     var name = document.getElementById('name').value;
     var salary = document.getElementById('salary').value;
     var age = document.getElementById('age').value;
@@ -214,10 +230,8 @@ function savedata(){
     arrexperience[arrexperience.length]=experience;
 
 
-}    
-   
- 
-function displayData() {
+
+
   var content="<b>Data Entered by User :</b><br>";  
   content+= [...arrNames]+"</br>";
   content+=[...arrsalaries]+"</br>";
@@ -225,25 +239,18 @@ function displayData() {
   content+=[...arrexperience]+"</br>";
   document.getElementById('display').innerHTML = content;
 
-   console.log(arrAges)
   
-  
-}  
-// if (arrAges[0] > arrAges[1]) {
-//     console.log(arrAges[1])
-    
-// }
 
 
-function bubbleSort(arr) {
+  function bubbleSort(arrAges) {
     let swapped
     do {
         swapped = false
-        for (let i = 0; i < arr.length - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                let temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp
+        for (let i = 0; i < arrAges.length - 1; i++) {
+            if (arrAges[i] > arrAges[i + 1]) {
+                let temp = arrAges[i]
+                arrAges[i] = arrAges[i + 1]
+                arrAges[i + 1] = temp
                 swapped = true
             }
             
@@ -253,10 +260,14 @@ function bubbleSort(arr) {
 }
 
 
-const arr = [-4,-5,23,12,13,13,123,12,23]
 
-bubbleSort(arr)
-console.log(arr)
+bubbleSort(arrAges)
+console.log(arrAges)
+
+  
+  
+}  
+
 
 // function sortages() {
 //     for(var i=0; i<arrAges.length; i++){
